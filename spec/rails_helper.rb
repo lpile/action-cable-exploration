@@ -41,7 +41,7 @@ RSpec.configure do |config|
 
   # factory_bot_rails config
   config.include FactoryBot::Syntax::Methods
-  
+
   # faker config (Clears used unique values for all generators)
   config.after(:each) { Faker::UniqueGenerator.clear }
 
@@ -64,4 +64,11 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end
