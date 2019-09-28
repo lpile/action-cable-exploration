@@ -41,6 +41,9 @@ RSpec.configure do |config|
 
   # factory_bot_rails config
   config.include FactoryBot::Syntax::Methods
+  
+  # faker config (Clears used unique values for all generators)
+  config.after(:each) { Faker::UniqueGenerator.clear }
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
