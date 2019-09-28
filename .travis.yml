@@ -1,0 +1,11 @@
+language: ruby
+services:
+- postgresql
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: a2+jDFuFHpQQzdGp7Uw6C3s8T9Ka3haBO7npnbV4hOJiNwfQO37q2AcoD2gP1sZYahGB/1Bh3gtM1T0dR72OnqDq9lpm/sZa6MQtPAFYBAR758MnI5ZoVF/rrbYQqDEP7LJkLT3qJHMacMGKdmyZJ9jMiQ2cktKdnCRDHxEL/5WwJrRuHcwznItDeqkuMPCwivCJHqFYKPT7W68krf6WTiEvS6yQ3jHBEdGGhHeVk2b8jU3l3GScC+FBqOHZwKzIedobvmfaJjNwbDx0gt+Er/wt5IAb095Lf61q4HGWMzO4KlA/YmG9qy1jgmDl1ishQMIMjEQYg7luuE7EgDjVauvGt9TCYLWLNUPIaDlwxNF5QhcvWBsJps/R607G1CuoYRLfamee3E+1LNSF8pb/l2tlq+iTf0QZrtqJWcyveRYCxyIcFAhEg1WNDD4HzQ1MlYzurfkzrKYBGqhLLsCagjZsTsdtSTpEM9aBUfrpbehLS68CooBL5S0AkNRk4qW6VisePdN6CeW/sDPOCvOe1RxOcptb03sJOM6bBbJZm5zkcsi2/ifiLy/m99o+m/ZL2HG+iKIQCD4U1JUHp4AttKAm3NknyLW5hkPtn6K4BXUW9rehDicP5sihSshnK2M9bzxFeOy7+521Krq8GaZKqMea9+bC6BIL7fFiRKxO+lc=
+  app: lpile-action-cable
+  run: "rake db:migrate"
